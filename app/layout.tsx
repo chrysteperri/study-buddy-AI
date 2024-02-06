@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
+import Navbar from "@/components/navbar";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 
@@ -32,18 +34,21 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className="light" suppressHydrationWarning>
       <head />
       <body
         className={cn(
-          "min-h-screen font-sans_regular antialiased",
+          "grainy min-h-screen font-sans_regular antialiased",
           fontRegularSans.variable,
           fontBoldSans.variable,
-          fontHeading.variable
+          fontHeading.variable,
         )}
       >
-        <Toaster />
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="light">
+          <Toaster />
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
