@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 import Navbar from "@/components/navbar";
+import Providers from "@/components/providers";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
@@ -36,20 +37,22 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className="light" suppressHydrationWarning>
       <head />
-      <body
-        className={cn(
-          "grainy min-h-screen font-sans_regular antialiased",
-          fontRegularSans.variable,
-          fontBoldSans.variable,
-          fontHeading.variable,
-        )}
-      >
-        <ThemeProvider attribute="class" defaultTheme="light">
-          <Toaster />
-          <Navbar />
-          {children}
-        </ThemeProvider>
-      </body>
+      <Providers>
+        <body
+          className={cn(
+            "grainy min-h-screen font-sans_regular antialiased",
+            fontRegularSans.variable,
+            fontBoldSans.variable,
+            fontHeading.variable,
+          )}
+        >
+          <ThemeProvider attribute="class" defaultTheme="light">
+            <Toaster />
+            <Navbar />
+            {children}
+          </ThemeProvider>
+        </body>
+      </Providers>
     </html>
   );
 }
