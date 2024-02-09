@@ -1,5 +1,7 @@
 import { redirect } from "next/navigation";
 
+import Dashboard from "@/components/dashboard";
+import { db } from "@/lib/db";
 // import Dashboard from "@/components/Dashboard";
 // import { db } from "@/db";
 // import { getUserSubscriptionPlan } from "@/lib/stripe";
@@ -9,19 +11,19 @@ const Page = async () => {
   const { getUser } = getKindeServerSession();
   const user = getUser();
 
-  if (!user || !user.id) redirect("/auth-callback?origin=dashboard");
+  if (!user || !user.id) redirect("/api/auth/login?origin=dashboard");
 
-  //   const dbUser = await db.user.findFirst({
-  //     where: {
-  //       id: user.id,
-  //     },
-  //   });
+  const dbUser = await db.user.findFirst({
+    where: {
+      id: user.id,
+    },
+  });
 
-  //   if (!dbUser) redirect("/auth-callback?origin=dashboard");
+  if (!dbUser) redirect("/auth-callback?origin=dashboard");
 
   //   const subscriptionPlan = await getUserSubscriptionPlan();
 
-  return <div>{user.email}</div>;
+  return <Dashboard />;
 };
 
 export default Page;

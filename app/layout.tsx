@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 
+import "react-loading-skeleton/dist/skeleton.css";
 import "@/styles/globals.css";
 
 const fontRegularSans = localFont({
