@@ -11,16 +11,16 @@ export default function Home() {
       <MaxWidthWrapper className="mb-12 mt-28 flex flex-col items-center justify-center text-center sm:mt-40">
         <div className="mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 hover:bg-white/50">
           <p className="text-sm font-semibold text-gray-700">
-            Quill is now public!
+            Study Buddy is now public!
           </p>
         </div>
         <h1 className="max-w-4xl font-heading text-5xl font-bold md:text-6xl lg:text-7xl">
-          Chat with your <span className="text-blue-600">documents</span> in
+          Chat with your <span className="text-primary">documents</span> in
           seconds.
         </h1>
         <p className="mt-5 max-w-prose text-zinc-700 sm:text-lg">
-          Quill allows you to have conversations with any PDF document. Simply
-          upload your file and start asking questions right away.
+          Study Buddy allows you to have conversations with any PDF document.
+          Simply upload your file and start asking questions right away.
         </p>
 
         <Link
@@ -91,7 +91,7 @@ export default function Home() {
               Start chatting in minutes
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Chatting to your PDF files has never been easier than with Quill.
+              Chatting to your PDF files has never been easier than with Study Buddy.
             </p>
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function Home() {
         <ol className="my-8 space-y-4 pt-8 md:flex md:space-x-12 md:space-y-0">
           <li className="md:flex-1">
             <div className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
-              <span className="text-sm font-medium text-blue-600">Step 1</span>
+              <span className="text-sm font-medium text-primary">Step 1</span>
               <span className="text-xl font-semibold">
                 Sign up for an account
               </span>
@@ -108,7 +108,7 @@ export default function Home() {
                 Either starting out with a free plan or choose our{" "}
                 <Link
                   href="/pricing"
-                  className="text-blue-700 underline underline-offset-2"
+                  className="text-primary underline underline-offset-2"
                 >
                   pro plan
                 </Link>
@@ -118,7 +118,7 @@ export default function Home() {
           </li>
           <li className="md:flex-1">
             <div className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
-              <span className="text-sm font-medium text-blue-600">Step 2</span>
+              <span className="text-sm font-medium text-primary">Step 2</span>
               <span className="text-xl font-semibold">
                 Upload your PDF file
               </span>
@@ -130,12 +130,12 @@ export default function Home() {
           </li>
           <li className="md:flex-1">
             <div className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
-              <span className="text-sm font-medium text-blue-600">Step 3</span>
+              <span className="text-sm font-medium text-primary">Step 3</span>
               <span className="text-xl font-semibold">
                 Start asking questions
               </span>
               <span className="mt-2 text-zinc-700">
-                It&apos;s that simple. Try out Quill today - it really takes
+                It&apos;s that simple. Try out Study Buddy today - it really takes
                 less than a minute.
               </span>
             </div>

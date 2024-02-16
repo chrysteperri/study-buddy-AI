@@ -21,7 +21,7 @@ const Navbar = () => {
       <MaxWidthWrapper>
         <div className="flex h-14 items-center justify-between border-b border-zinc-200">
           <Link href="/" className="z-40 flex font-semibold">
-            <span>quill.</span>
+            <span>Study Buddy.</span>
           </Link>
 
           <MobileNav isAuth={!!user} />
