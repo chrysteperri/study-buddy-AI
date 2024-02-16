@@ -91,7 +91,8 @@ export default function Home() {
               Start chatting in minutes
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Chatting to your PDF files has never been easier than with Study Buddy.
+              Chatting to your PDF files has never been easier than with Study
+              Buddy.
             </p>
           </div>
         </div>
@@ -135,8 +136,8 @@ export default function Home() {
                 Start asking questions
               </span>
               <span className="mt-2 text-zinc-700">
-                It&apos;s that simple. Try out Study Buddy today - it really takes
-                less than a minute.
+                It&apos;s that simple. Try out Study Buddy today - it really
+                takes less than a minute.
               </span>
             </div>
           </li>
@@ -146,7 +147,7 @@ export default function Home() {
           <div className="mt-16 flow-root sm:mt-24">
             <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
               <Image
-                src="/file-upload-preview.jpg"
+                src="/file-upload-preview.png"
                 alt="uploading preview"
                 width={1419}
                 height={732}
