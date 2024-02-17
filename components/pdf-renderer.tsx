@@ -26,7 +26,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Input } from "./ui/input";
-import PdfFullscreen from "./PdfFullscreen";
+import PdfFullscreen from "./pdf-full-screen";
 
 import "simplebar-react/dist/simplebar.min.css";
 import "react-pdf/dist/Page/AnnotationLayer.css";

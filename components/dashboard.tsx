@@ -12,7 +12,7 @@ import { Button } from "./ui/button";
 import UploadButton from "./upload-button";
 
 const Dashboard = () => {
-  const utils = trpc.useUtils()
+  const utils = trpc.useUtils();
   const [currentlyDeletingFile, setCurrentlyDeletingFile] = useState<
     string | null
   >(null);
@@ -69,7 +69,7 @@ const Dashboard = () => {
                   </div>
                 </Link>
 
-                <div className="mt-4 grid grid-cols-3 place-items-center gap-6 px-6 py-2 text-xs text-zinc-500">
+                <div className="mt-4 grid grid-cols-3 place-items-center gap-8 px-6 py-2 text-xs text-zinc-500">
                   <div className="flex items-center gap-2">
                     <Plus className="h-4 w-4" />
                     {format(new Date(file.createdAt), "MMM yyyy")}
@@ -77,7 +77,9 @@ const Dashboard = () => {
 
                   <div className="flex items-center gap-2">
                     <MessageSquare className="h-4 w-4" />
-                    mocked
+                    <p className="max-w-[100px] truncate text-sm">
+                      {file.name}
+                    </p>
                   </div>
 
                   <Button
