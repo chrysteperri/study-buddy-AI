@@ -2,8 +2,6 @@
 
 import { ArrowRight } from "lucide-react";
 
-import { trpc } from "@/app/_trpc/client";
-
 import { Button } from "./ui/button";
 
 const UpgradeButton = () => {
