@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 import Navbar from "@/components/navbar";
@@ -7,8 +6,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { cn, constructMetadata } from "@/lib/utils";
 
-import "react-loading-skeleton/dist/skeleton.css";
 import "@/styles/globals.css";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const fontRegularSans = localFont({
   src: "../assets/fonts/Inter-Regular.ttf",
@@ -26,7 +25,6 @@ const fontHeading = localFont({
 });
 
 export const metadata = constructMetadata();
-
 
 interface RootLayoutProps {
   children: React.ReactNode;
