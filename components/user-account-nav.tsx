@@ -1,25 +1,25 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Gem } from "lucide-react";
+import Image from 'next/image'
+import Link from 'next/link'
+import { Gem } from 'lucide-react'
 
-// import { getUserSubscriptionPlan } from "@/lib/stripe";
-import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/server";
+import { getUserSubscriptionPlan } from '@/lib/stripe'
+import { LogoutLink } from '@kinde-oss/kinde-auth-nextjs/server'
 
-import { Avatar, AvatarFallback } from "./ui/avatar";
-import { Button } from "./ui/button";
+import { Avatar, AvatarFallback } from './ui/avatar'
+import { Button } from './ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import { Icons } from "./Icons";
+} from './ui/dropdown-menu'
+import { Icons } from './Icons'
 
 interface UserAccountNavProps {
-  email: string | undefined;
-  name: string;
-  imageUrl: string;
+  email: string | undefined
+  name: string
+  imageUrl: string
 }
 
 const UserAccountNav = async ({
@@ -27,38 +27,44 @@ const UserAccountNav = async ({
   imageUrl,
   name,
 }: UserAccountNavProps) => {
-  //   const subscriptionPlan = await getUserSubscriptionPlan();
+  const subscriptionPlan = await getUserSubscriptionPlan()
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild className="overflow-visible">
-        <Button className="aspect-square h-8 w-8 rounded-full bg-slate-400">
-          <Avatar className="relative h-8 w-8">
+      <DropdownMenuTrigger
+        asChild
+        className='overflow-visible'>
+        <Button className='rounded-full h-8 w-8 aspect-square bg-slate-400'>
+          <Avatar className='relative w-8 h-8'>
             {imageUrl ? (
-              <div className="relative aspect-square h-full w-full">
+              <div className='relative aspect-square h-full w-full'>
                 <Image
                   fill
                   src={imageUrl}
-                  alt="profile picture"
-                  referrerPolicy="no-referrer"
+                  alt='profile picture'
+                  referrerPolicy='no-referrer'
                 />
               </div>
             ) : (
               <AvatarFallback>
-                <span className="sr-only">{name}</span>
-                <Icons.user className="h-4 w-4 text-zinc-900" />
+                <span className='sr-only'>{name}</span>
+                <Icons.user className='h-4 w-4 text-zinc-900' />
               </AvatarFallback>
             )}
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="bg-white" align="end">
-        <div className="flex items-center justify-start gap-2 p-2">
-          <div className="flex flex-col space-y-0.5 leading-none">
-            {name && <p className="text-sm font-medium text-black">{name}</p>}
+      <DropdownMenuContent className='bg-white' align='end'>
+        <div className='flex items-center justify-start gap-2 p-2'>
+          <div className='flex flex-col space-y-0.5 leading-none'>
+            {name && (
+              <p className='font-medium text-sm text-black'>
+                {name}
+              </p>
+            )}
             {email && (
-              <p className="w-[200px] truncate text-xs text-zinc-700">
+              <p className='w-[200px] truncate text-xs text-zinc-700'>
                 {email}
               </p>
             )}
@@ -68,27 +74,30 @@ const UserAccountNav = async ({
         <DropdownMenuSeparator />
 
         <DropdownMenuItem asChild>
-          <Link href="/dashboard">Dashboard</Link>
+          <Link href='/dashboard'>Dashboard</Link>
         </DropdownMenuItem>
 
-        {/* <DropdownMenuItem asChild>
+        <DropdownMenuItem asChild>
           {subscriptionPlan?.isSubscribed ? (
-            <Link href="/dashboard/billing">Manage Subscription</Link>
+            <Link href='/dashboard/billing'>
+              Manage Subscription
+            </Link>
           ) : (
-            <Link href="/pricing">
-              Upgrade <Gem className="ml-1.5 h-4 w-4 text-blue-600" />
+            <Link href='/pricing'>
+              Upgrade{' '}
+              <Gem className='text-blue-600 h-4 w-4 ml-1.5' />
             </Link>
           )}
-        </DropdownMenuItem> */}
+        </DropdownMenuItem>
 
         <DropdownMenuSeparator />
 
-        <DropdownMenuItem className="cursor-pointer">
-          <LogoutLink>Log out</LogoutLink>
+        <DropdownMenuItem className='cursor-pointer'>
+            <LogoutLink>Log out</LogoutLink>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
-};
+  )
+}
 
-export default UserAccountNav;
+export default UserAccountNav

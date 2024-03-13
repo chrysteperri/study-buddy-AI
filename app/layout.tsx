@@ -5,7 +5,7 @@ import Navbar from "@/components/navbar";
 import Providers from "@/components/providers";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
-import { cn } from "@/lib/utils";
+import { cn, constructMetadata } from "@/lib/utils";
 
 import "react-loading-skeleton/dist/skeleton.css";
 import "@/styles/globals.css";
@@ -25,10 +25,8 @@ const fontHeading = localFont({
   variable: "--font-heading",
 });
 
-export const metadata: Metadata = {
-  title: "Study Buddy AI",
-  description: "Your AI study partner",
-};
+export const metadata = constructMetadata();
+
 
 interface RootLayoutProps {
   children: React.ReactNode;

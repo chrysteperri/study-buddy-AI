@@ -13,8 +13,8 @@ export function absoluteUrl(path: string) {
 }
 
 export function constructMetadata({
-  title = "Study Buddy - the SaaS for students",
-  description = "Study Buddy is an open-source software to make chatting to your PDF files easy.",
+  title = "Study Buddy AI",
+  description = "Your AI study partner",
   image = "/thumbnail.png",
   icons = "/favicon.ico",
   noIndex = false,
@@ -42,7 +42,7 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: "@joshtriedcoding",
+      creator: "@John_Mwanzia144",
     },
     icons,
     metadataBase: new URL("https://quill-jet.vercel.app"),
