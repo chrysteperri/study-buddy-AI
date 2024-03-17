@@ -1,10 +1,10 @@
 import { useContext, useRef } from "react";
-import { useRouter } from "next/navigation";
 import { Send } from "lucide-react";
 
-import { ChatContext } from "@/components/chat/chat-context";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { Button } from "../ui/button";
+import { Textarea } from "../ui/textarea";
+
+import { ChatContext } from "./chat-context";
 
 interface ChatInputProps {
   isDisabled?: boolean;

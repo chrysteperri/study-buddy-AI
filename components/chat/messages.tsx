@@ -3,10 +3,10 @@ import { Loader2, MessageSquare } from "lucide-react";
 import Skeleton from "react-loading-skeleton";
 
 import { trpc } from "@/app/_trpc/client";
-import { ChatContext } from "@/components/chat/chat-context";
 import { INFINITE_QUERY_LIMIT } from "@/config/infinite-query";
 import { useIntersection } from "@mantine/hooks";
 
+import { ChatContext } from "./chat-context";
 import Message from "./message";
 
 interface MessagesProps {
@@ -60,12 +60,7 @@ const Messages = ({ fileId }: MessagesProps) => {
   }, [entry, fetchNextPage]);
 
   return (
-    <div
-      className="scrollbar-thumb-blue scrollbar-thumb-rounded 
-    scrollbar-track-blue-lighter 
-    scrollbar-w-2 scrolling-touch flex max-h-[calc(100vh-3.5rem-7rem)]
-     flex-1 flex-col-reverse gap-4 overflow-y-auto border-zinc-200 p-3"
-    >
+    <div className="scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch flex max-h-[calc(100vh-3.5rem-7rem)] flex-1 flex-col-reverse gap-4 overflow-y-auto border-zinc-200 p-3">
       {combinedMessages && combinedMessages.length > 0 ? (
         combinedMessages.map((message, i) => {
           const isNextMessageSamePerson =
@@ -99,10 +94,8 @@ const Messages = ({ fileId }: MessagesProps) => {
         </div>
       ) : (
         <div className="flex flex-1 flex-col items-center justify-center gap-2">
-          <MessageSquare className="h-8 w-8 text-primary" />
-          <h3 className="font-heading text-xl font-semibold">
-            You&apos;re all set!
-          </h3>
+          <MessageSquare className="h-8 w-8 text-blue-500" />
+          <h3 className="text-xl font-semibold">You&apos;re all set!</h3>
           <p className="text-sm text-zinc-500">
             Ask your first question to get started.
           </p>

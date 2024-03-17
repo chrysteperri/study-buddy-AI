@@ -1,9 +1,9 @@
-import React from "react";
 import { notFound, redirect } from "next/navigation";
 
 import ChatWrapper from "@/components/chat/chat-wrapper";
 import PdfRenderer from "@/components/pdf-renderer";
 import { db } from "@/lib/db";
+import { getUserSubscriptionPlan } from "@/lib/stripe";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 interface PageProps {
@@ -12,13 +12,13 @@ interface PageProps {
   };
 }
 
-export default async function page({ params }: PageProps) {
+const Page = async ({ params }: PageProps) => {
   const { fileid } = params;
 
   const { getUser } = getKindeServerSession();
   const user = getUser();
 
-  if (!user || !user.id) redirect(`/api/auth/login?origin=dashboard/${fileid}`);
+  if (!user || !user.id) redirect(`/auth-callback?origin=dashboard/${fileid}`);
 
   const file = await db.file.findFirst({
     where: {
@@ -28,6 +28,8 @@ export default async function page({ params }: PageProps) {
   });
 
   if (!file) notFound();
+
+  const plan = await getUserSubscriptionPlan();
 
   return (
     <div className="flex h-[calc(100vh-3.5rem)] flex-1 flex-col justify-between">
@@ -41,9 +43,11 @@ export default async function page({ params }: PageProps) {
         </div>
 
         <div className="flex-[0.75] shrink-0 border-t border-gray-200 lg:w-96 lg:border-l lg:border-t-0">
-          <ChatWrapper fileId={file.id} />
+          <ChatWrapper isSubscribed={plan.isSubscribed} fileId={file.id} />
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Page;

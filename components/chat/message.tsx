@@ -2,9 +2,10 @@ import { forwardRef } from "react";
 import { format } from "date-fns";
 import ReactMarkdown from "react-markdown";
 
-import { Icons } from "@/components/Icons";
 import { cn } from "@/lib/utils";
 import { ExtendedMessage } from "@/types";
+
+import { Icons } from "../Icons";
 
 interface MessageProps {
   message: ExtendedMessage;
@@ -24,7 +25,7 @@ const Message = forwardRef<HTMLDivElement, MessageProps>(
           className={cn(
             "relative flex aspect-square h-6 w-6 items-center justify-center",
             {
-              "order-2 rounded-sm bg-primary": message.isUserMessage,
+              "order-2 rounded-sm bg-blue-600": message.isUserMessage,
               "order-1 rounded-sm bg-zinc-800": !message.isUserMessage,
               invisible: isNextMessageSamePerson,
             },
@@ -33,7 +34,7 @@ const Message = forwardRef<HTMLDivElement, MessageProps>(
           {message.isUserMessage ? (
             <Icons.user className="h-3/4 w-3/4 fill-zinc-200 text-zinc-200" />
           ) : (
-            <Icons.logo className="h-3/4 w-3/4 fill-zinc-300 stroke-none" />
+            <Icons.logo className="h-3/4 w-3/4 fill-zinc-300" />
           )}
         </div>
 
@@ -45,7 +46,7 @@ const Message = forwardRef<HTMLDivElement, MessageProps>(
         >
           <div
             className={cn("inline-block rounded-lg px-4 py-2", {
-              "bg-primary text-white": message.isUserMessage,
+              "bg-blue-600 text-white": message.isUserMessage,
               "bg-gray-200 text-gray-900": !message.isUserMessage,
               "rounded-br-none":
                 !isNextMessageSamePerson && message.isUserMessage,
