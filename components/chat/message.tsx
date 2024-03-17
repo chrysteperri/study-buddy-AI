@@ -25,7 +25,7 @@ const Message = forwardRef<HTMLDivElement, MessageProps>(
           className={cn(
             "relative flex aspect-square h-6 w-6 items-center justify-center",
             {
-              "order-2 rounded-sm bg-primary/60": message.isUserMessage,
+              "order-2 rounded-sm bg-primary": message.isUserMessage,
               "order-1 rounded-sm bg-zinc-800": !message.isUserMessage,
               invisible: isNextMessageSamePerson,
             },
@@ -46,7 +46,7 @@ const Message = forwardRef<HTMLDivElement, MessageProps>(
         >
           <div
             className={cn("inline-block rounded-lg px-4 py-2", {
-              "bg-primary/60 text-white": message.isUserMessage,
+              "bg-primary text-white": message.isUserMessage,
               "bg-gray-200 text-gray-900": !message.isUserMessage,
               "rounded-br-none":
                 !isNextMessageSamePerson && message.isUserMessage,
