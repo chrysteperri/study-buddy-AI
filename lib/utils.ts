@@ -7,8 +7,9 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function absoluteUrl(path: string) {
+  const url = "https://study-buddy-ai.vercel.app"
   if (typeof window !== "undefined") return path;
-  if (process.env.APP_VERCEL_URL) return `https://${process.env.APP_VERCEL_URL}${path}`;
+  if (url) return `${url}${path}`;
   return `http://localhost:${process.env.PORT ?? 3000}${path}`;
 }
 

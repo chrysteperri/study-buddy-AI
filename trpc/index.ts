@@ -4,7 +4,6 @@ import { INFINITE_QUERY_LIMIT } from "@/config/infinite-query";
 import { PLANS } from "@/config/stripe";
 import { db } from "@/lib/db";
 import { getUserSubscriptionPlan, stripe } from "@/lib/stripe";
-import { absoluteUrl } from "@/lib/utils";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { TRPCError } from "@trpc/server";
 
@@ -53,7 +52,7 @@ export const appRouter = router({
   createStripeSession: privateProcedure.mutation(async ({ ctx }) => {
     const { userId } = ctx;
 
-    const billingUrl = absoluteUrl("/dashboard/billing");
+    const billingUrl = "https://study-buddy-ai.vercel.app/dashboard/billing";
 
     if (!userId) throw new TRPCError({ code: "UNAUTHORIZED" });
 
