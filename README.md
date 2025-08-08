@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 🏛️ This Data Flow Diagram, represents how the application was engineeered.
+### It gives brief overview of the technologies used and how data flows through the system.
+![Uploading Level 1 DFD_formphotoeditor.com.jpg…]()
 
 ## Getting Started
 
