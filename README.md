@@ -18,7 +18,7 @@
 
 | Layer           | Stack / Service                         |
 |-----------------|------------------------------------------|
-| **Frontend**     | Web UI (not included here)              |
+| **Frontend**     | React/Shadcn UI
 | **Backend**      | Node.js + tRPC + TypeScript             |
 | **Job Queue**    | BullMQ / SQS (optional setup)           |
 | **AI Services**  | OpenAI GPT + Embeddings                 |
