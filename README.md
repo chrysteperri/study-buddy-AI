@@ -1,12 +1,16 @@
-## 🏛️ This L1 Data Flow Diagram, represents how the application was engineeered.
-### It gives brief overview of the main systems used and how data flows through the system.
+## 📌 Project Overview
+**Study Buddy AI** is an AI-powered tool designed to help students study more efficiently by transforming academic documents into concise, easy-to-understand summaries.  
+The project leverages natural language processing (NLP) and large language models to process lecture notes and PDFs, producing structured summaries that highlight key points and reduce information overload.
+
+## 🏛️ This L1 Data Flow Diagram represents how the application was engineered.
+### It gives a brief overview of the main systems used and how data flows through the system.
 ![Level 1 DFD_formphotoeditor com](https://github.com/user-attachments/assets/8a2dacb3-c11a-4966-8e28-dc6571c950cc)
 
 ## 🚀 Features
 
 - ✅ PDF Upload and Ingestion via UploadThing
 - ✅ Semantic Chunking and Embedding via OpenAI + Pinecone
-- ✅ Summarization using GPT-3.5 or GPT-4 (via LangChain)
+- ✅ Summarisation using GPT-3.5 or GPT-4 (via LangChain)
 - ✅ Stripe integration for premium access
 - ✅ Auth with Kinde Identity Provider
 - ✅ Full-stack TypeScript + tRPC
